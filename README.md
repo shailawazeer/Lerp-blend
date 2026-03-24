@@ -1,7 +1,7 @@
 # Pixel LERP — Image Morphing
 
 **Course:** Human Computer Interaction — Week 08
-**Files:** `index.html`, `js`,`cs`
+**Files:** `index.html`, `js`,`css`
 
 ---
 
