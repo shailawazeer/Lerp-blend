@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Morph</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="Stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Pixel LERP — Image Morphing</h1>
+
+    <div class="frames">
+      <div class="frame side">
+        <canvas id="cA" width="180" height="135"></canvas>
+        <div class="frame-label">Image A · t=0</div>
+      </div>
+
+      <div class="frame middle">
+        <canvas id="cOut" width="240" height="180"></canvas>
+        <div class="frame-label" id="midLabel">P(t) · blend</div>
+      </div>
+
+      <div class="frame side">
+        <canvas id="cB" width="180" height="135"></canvas>
+        <div class="frame-label">Image B · t=1</div>
+      </div>
+    </div>
+
+    <div class="t-value" id="tVal">t = 0.50</div>
+
+    <div class="slider-row">
+      <span class="tag">A</span>
+      <input type="range" id="slider" min="0" max="100" value="50" step="1" />
+      <span class="tag">B</span>
+    </div>
+
+    <div class="btns">
+      <button id="animBtn">▶ Animate</button>
+      <button id="b0">t = 0</button>
+      <button id="b50">t = 0.5</button>
+      <button id="b100">t = 1</button>
+    </div>
+
+    <div class="formula">
+      P(t) =
+      <span class="va">(1−t) × R,G,B<sub>A</sub></span>
+      +
+      <span class="vb">t × R,G,B<sub>B</sub></span>
+      = <span class="vp" id="formulaOut">0.50 × A + 0.50 × B</span>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

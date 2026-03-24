@@ -1,0 +1,159 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 24px;
+  font-family: "IBM Plex Mono", monospace;
+  color: #eee;
+}
+
+h1 {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #555;
+}
+
+/* The three canvases side by side */
+.frames {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.frame canvas {
+  border-radius: 6px;
+  display: block;
+}
+
+.frame.side canvas {
+  opacity: 0.45;
+}
+.frame.middle canvas {
+  box-shadow: 0 0 0 2px #c8ff5f44;
+}
+
+.frame-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: #444;
+  text-transform: uppercase;
+}
+.frame.middle .frame-label {
+  color: #c8ff5f;
+}
+
+/* t value */
+.t-value {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #c8ff5f;
+  letter-spacing: -0.02em;
+  min-width: 80px;
+  text-align: center;
+}
+
+/* Slider */
+.slider-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 480px;
+  max-width: 90vw;
+}
+.tag {
+  font-size: 0.65rem;
+  color: #555;
+  letter-spacing: 0.05em;
+  min-width: 14px;
+}
+
+input[type="range"] {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 2px;
+  background: #222;
+  outline: none;
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #c8ff5f;
+  border: 3px solid #111;
+  cursor: grab;
+}
+input[type="range"]:active::-webkit-slider-thumb {
+  cursor: grabbing;
+  transform: scale(1.15);
+}
+
+/* Buttons */
+.btns {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background: transparent;
+  color: #777;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+button:hover {
+  border-color: #c8ff5f;
+  color: #c8ff5f;
+}
+button#animBtn {
+  border-color: #c8ff5f55;
+  color: #c8ff5f;
+  background: rgba(200, 255, 95, 0.06);
+}
+button#animBtn:hover {
+  background: rgba(200, 255, 95, 0.14);
+}
+
+/* formula */
+.formula {
+  font-size: 0.62rem;
+  color: #333;
+  letter-spacing: 0.04em;
+}
+.formula .va {
+  color: #ff5f7e88;
+}
+.formula .vb {
+  color: #5bc8ff88;
+}
+.formula .vp {
+  color: #c8ff5f;
+}
